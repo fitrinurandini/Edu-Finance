@@ -35,7 +35,7 @@
 
     <!-- Nav Item - Tambah Materi -->
     <li class="nav-item {{ Request::is('Trainer/TambahMateri*') ? 'active' : '' }}">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="{{ route('tata_usaha.create') }}">
             <i class="fas fa-fw fa-plus-circle"></i>
             <span>Tambah Pembayaran</span>
         </a>

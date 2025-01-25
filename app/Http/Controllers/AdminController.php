@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pembayaran;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;    
 
@@ -13,7 +14,8 @@ class AdminController extends Controller
     }
     function tata_usaha()
     {
-        return view('tata_usaha.index');
+        $data = Pembayaran::all();
+        return view('tata_usaha.index', compact('data'));
     }
     function ketua_akuntansi()
     {

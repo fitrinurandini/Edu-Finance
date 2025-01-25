@@ -16,6 +16,12 @@
         <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
           class="img-fluid" alt="Phone image">
       </div>
+      @if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+    @endif
+
       <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
         <form action="" method="POST">
           @csrf
