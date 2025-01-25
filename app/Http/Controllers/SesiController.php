@@ -35,10 +35,7 @@ class SesiController extends Controller
             return redirect('ketua_akuntansi');
         } elseif (Auth::user()->role == 'wali_kelas'){
             return redirect('walikelas');
-        } elseif (Auth::user()->role == 'orang_tua'){
-            return redirect('orangtua'); 
-        }       
-    } else {
+        } 
         return redirect('')->withErrors('Username dan password yang di masukan tidak sesuai')->withInput();
     }
 
@@ -46,6 +43,6 @@ class SesiController extends Controller
 
     function logout(){
         Auth::logout();
-        return redirect('');
+        return redirect('login');
     }
 }

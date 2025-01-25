@@ -16,7 +16,7 @@
         <div class="sidebar-brand-icon">
             <i class="fas fa-user-tie fa-2x"></i> <!-- Mengganti ikon menjadi lebih besar -->
         </div>
-        <div class="sidebar-brand-text mx-3" style="font-size: 1.10rem;">Trainer KLS <sup>Online</sup></div>
+        <div class="sidebar-brand-text mx-3" style="font-size: 1.10rem;">Tata Usaha <sup>Online</sup></div>
     </a>
 
     <!-- Divider -->
@@ -86,6 +86,11 @@
         
                     
                 </a>
+                <li class="nav-item dropdown no-arrow ">
+                <a class="dropdown-item" href="{{ route('logout') }}">
+                            <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 "></i>
+                            <b class=>Logout</b>
+                        </a>
 
                 <!-- Dropdown - User Information -->
                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">

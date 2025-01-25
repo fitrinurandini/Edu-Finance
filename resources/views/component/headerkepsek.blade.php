@@ -25,7 +25,7 @@
             <i class="fas fa-user fa-2x"></i>
         </div>
         <div class="sidebar-brand-text mx-3">
-            Admin Kelas <sup>Online</sup>
+           KepalaSekolah <sup>Online</sup>
         </div>
     </a>
 
@@ -67,7 +67,7 @@
                 </a>
                 <a class="collapse-item {{ request()->is('admin/Data-trainer') ? 'active bg-primary text-white' : '' }}" 
                    href="{{ url('admin/Data-trainer') }}">
-                    <i class="fas fa-chalkboard-teacher mr-2"></i>Data Pembayaran Atribut
+                    <i class="fas fa-chalkboard-teacher mr-2"></i>Data Atribut
                 </a>
             </div>  
         </div>
