@@ -60,7 +60,7 @@
                                             <th>No</th>
                                             <th>Jenis Pembayaran</th>
                                             <th>Nama</th>
-                                            <th>JK</th>
+                                            <th>Jenis Kelamin</th>
                                             <th>Kelas</th>
                                             <th>Jumlah</th>
                                             <th>Tanggal Cicilan 1</th>

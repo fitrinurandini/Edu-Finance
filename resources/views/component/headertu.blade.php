@@ -30,6 +30,28 @@
         </a>
     </li>
 
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item {{ Request::is('trainer') ? 'active' : '' }}">
+        <a class="nav-link" href="{{ url('students') }}">
+            <i class="fas fa-fw fa-users"></i>
+            <span>Data Pokok</span>
+        </a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+     <!-- Nav Item - Dashboard -->
+     <li class="nav-item {{ Request::is('trainer') ? 'active' : '' }}">
+        <a class="nav-link" href="#">
+            <i class="fas fa-fw fa-users"></i>
+            <span>Data Pagu Tahunan</span>
+        </a>
+    </li>
+
     <!-- Divider -->
     <hr class="sidebar-divider">
 
@@ -45,9 +67,20 @@
     
     <!-- Nav Item - Pengguna Kelas -->
     <li class="nav-item {{ Request::is('trainer/penggunakelas*') ? 'active' : '' }}">
-        <a class="nav-link" href="#">
-            <i class="fas fa-fw fa-users"></i> <!-- Mengganti dengan ikon 'users' -->
+        <a class="nav-link" href="{{ route('tata_usaha.index') }}">
+            <i class="fas fa-chalkboard-teacher mr-2"></i> <!-- Mengganti dengan ikon 'users' -->
             <span>Data Pembayaran</span>
+        </a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider d-none d-md-block">
+
+     <!-- Nav Item - Pengguna Kelas -->
+     <li class="nav-item {{ Request::is('trainer/penggunakelas*') ? 'active' : '' }}">
+        <a class="nav-link" href="#">
+            <i class="fas fa-fw fa-table"></i> <!-- Mengganti dengan ikon 'users' -->
+            <span>Laporan</span>
         </a>
     </li>
 

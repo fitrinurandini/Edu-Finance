@@ -3,6 +3,8 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PembayaranController;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\SesiController;
 use Illuminate\Support\Facades\Route;
 
@@ -35,6 +37,15 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/tata_usaha/pay/{id}', [PembayaranController::class, 'pay'])->middleware('userAkses:tata_usaha')->name('tata_usaha.pay');
     Route::post('/tata_usaha/process-payment/{id}', [PembayaranController::class, 'processpayment'])->middleware('userAkses:tata_usaha')->name('tata_usaha.process_payment');
 
+    // data pokok
+    Route::resource('students', StudentController::class);
+
+
+    //Laporan
+    Route::get('/laporan/tanggal', [LaporanController::class, 'reportByTanggal'])->name('laporan.tanggal');
+    Route::get('/laporan/tahun', [LaporanController::class, 'reportByTahun'])->name('laporan.tahun');
+    Route::get('/laporan/bulan', [LaporanController::class, 'reportByBulan'])->name('laporan.bulan');
+    Route::get('/laporan/kelas', [LaporanController::class, 'reportByKelas'])->name('laporan.kelas');
 
 });
 
