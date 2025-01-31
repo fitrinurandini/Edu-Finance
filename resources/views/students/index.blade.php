@@ -33,7 +33,7 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Data Pokok SMKn 1 Kawali</h1>
+                    <h1 class="h3 mb-4 text-gray-800">Data Pokok SMKN 1 Kawali</h1>
 
                     <!-- Success Message -->
                     @if (session('success'))
@@ -67,7 +67,28 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                       
+                                        @foreach ($students as $student)
+                                            <tr>
+                                                <td>{{ $loop->iteration }}</td>
+                                                <td>{{ $student->nisn }}</td>
+                                                <td>{{ $student->nis }}</td>
+                                                <td>{{ $student->nama }}</td>
+                                                <td>{{ $student->kelas }}</td>
+                                                <td>{{ $student->jenis_kelamin == 'L' ? 'Laki-laki' : 'Perempuan' }}</td>
+                                                <td>
+                                                    <a href="{{ route('students.edit', $student->id) }}" class="btn btn-sm btn-warning">
+                                                        <i class="fas fa-edit"></i> Edit
+                                                    </a>
+                                                    <form action="{{ route('students.destroy', $student->id) }}" method="POST" style="display:inline;">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Yakin ingin menghapus?')">
+                                                            <i class="fas fa-trash"></i> Hapus
+                                                        </button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
