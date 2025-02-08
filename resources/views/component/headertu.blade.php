@@ -46,7 +46,7 @@
 
      <!-- Nav Item - Dashboard -->
      <li class="nav-item {{ Request::is('trainer') ? 'active' : '' }}">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="{{ url('pagu_tahunans') }}">
             <i class="fas fa-fw fa-users"></i>
             <span>Data Pagu Tahunan</span>
         </a>
@@ -87,6 +87,17 @@
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 
+     <!-- Nav Item - Pengguna Kelas -->
+     <li class="nav-item {{ Request::is('trainer/penggunakelas*') ? 'active' : '' }}">
+        <a class="nav-link" href="{{ route('logout') }}">
+            <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2"></i> <!-- Mengganti dengan ikon 'users' -->
+            <span>Logout</span>
+        </a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider d-none d-md-block">
+
     <!-- Sidebar Toggler (Sidebar) -->
     <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
@@ -117,25 +128,13 @@
             <li class="nav-item dropdown no-arrow">
                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button">
         
-                    
-                </a>
-                <li class="nav-item dropdown no-arrow ">
-                <a class="dropdown-item" href="{{ route('logout') }}">
-                            <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 "></i>
-                            <b class=>Logout</b>
-                        </a>
-
                 <!-- Dropdown - User Information -->
                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                     <a class="dropdown-item" href="#">
                         <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                         Profile
                     </a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="{{ route('logout') }}">
-                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                        Logout
-                    </a>
+
                 </div>
             </li>
             </ul>

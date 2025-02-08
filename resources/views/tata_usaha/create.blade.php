@@ -76,14 +76,6 @@
                 @enderror
             </div>
 
-            <!-- Sisa -->
-            <div class="mb-3">
-                <label for="sisa">Sisa:</label>
-                <input type="number" name="sisa" id="sisa" class="form-control" min="0" step="0.01" value="{{ old('sisa') }}" required>
-                @error('sisa')
-                    <div class="text-danger">{{ $message }}</div>
-                @enderror
-            </div>
 
             <!-- Submit Button -->
             <button type="submit" class="btn btn-primary">Simpan</button>

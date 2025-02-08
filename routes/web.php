@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\PaguTahunanController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\SesiController;
 use Illuminate\Support\Facades\Route;
@@ -39,7 +40,9 @@ Route::middleware(['auth'])->group(function(){
 
     // data pokok
     Route::resource('students', StudentController::class);
-
+    
+    // data pagu tahunan
+    Route::resource('pagu_tahunans', PaguTahunanController::class);
 
     //Laporan
     Route::get('/laporan/tanggal', [LaporanController::class, 'reportByTanggal'])->name('laporan.tanggal');

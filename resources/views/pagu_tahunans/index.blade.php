@@ -33,7 +33,7 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Data Pokok Smkn 1 Kawali</h1>
+                    <h1 class="h3 mb-4 text-gray-800">Data Pagu Tahunan</h1>
 
                     <!-- Success Message -->
                     @if (session('success'))
@@ -43,14 +43,14 @@
                     @endif
 
                     <!-- Button Tambah -->
-                    <a href="{{ route('students.create') }}" class="btn btn-primary mb-3">
-                        <i class="fas fa-plus"></i> Tambah Data Siswa
+                    <a href="{{ route('pagu_tahunans.create') }}" class="btn btn-primary mb-3">
+                        <i class="fas fa-plus"></i> Tambah Data Pagu
                     </a>
 
                     <!-- Table -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Data Pokok</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Data Pagu</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -58,28 +58,24 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>NISN</th>
-                                            <th>NIS</th>
-                                            <th>Nama</th>
-                                            <th>Kelas</th>
-                                            <th>Jenis Kelamin</th>
+                                            <th>Tahun Ajaran</th>
+                                            <th>Nominal Sumbangan</th>
+                                            <th>Nominal Atribut</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($students as $student)
+                                        @foreach ($pagu_tahunans as $pagu)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td>{{ $student->nisn }}</td>
-                                                <td>{{ $student->nis }}</td>
-                                                <td>{{ $student->nama }}</td>
-                                                <td>{{ $student->kelas }}</td>
-                                                <td>{{ $student->jenis_kelamin == 'L' ? 'Laki-laki' : 'Perempuan' }}</td>
+                                                <td>{{ $pagu->tahun_ajaran }}</td>
+                                                <td>Rp {{ number_format($pagu->nominal_sumbangan, 2, ',', '.') }}</td> 
+                                                <td>Rp {{ number_format($pagu->nominal_atribut, 2, ',', '.') }}</td>
                                                 <td>
-                                                    <a href="{{ route('students.edit', $student->id) }}" class="btn btn-sm btn-warning">
+                                                    <a href="{{ route('pagu_tahunans.edit', $pagu->id) }}" class="btn btn-sm btn-warning">
                                                         <i class="fas fa-edit"></i> Edit
                                                     </a>
-                                                    <form action="{{ route('students.destroy', $student->id) }}" method="POST" style="display:inline;">
+                                                    <form action="{{ route('pagu_tahunans.destroy', $pagu->id) }}" method="POST" style="display:inline;">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Yakin ingin menghapus?')">
